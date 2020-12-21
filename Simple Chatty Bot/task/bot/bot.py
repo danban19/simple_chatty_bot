@@ -1,37 +1,38 @@
-def greet(bot_name, birth_year):
-    print('Hello! My name is ' + bot_name + '.')
-    print('I was created in ' + birth_year + '.')
+def greetings(bot_name, birth_year):  # prints greetings with preloaded name and bot's birth year
+    print(f'Hello! My name is {bot_name}.')
+    print(f'I was created in {birth_year}.')
+    remind_name()
 
 
-def remind_name():
+def remind_name():  # prints username
     print('Please, remind me your name.')
     name = input()
-    print('What a great name you have, ' + name + '!')
+    print(f'What a great name you have, {name}!')
+    guess_age()
 
 
-def guess_age():
+def guess_age():  # guesses age by remainders
     print('Let me guess your age.')
     print('Enter remainders of dividing your age by 3, 5 and 7.')
+    remainder_3 = int(input())
+    remainder_5 = int(input())
+    remainder_7 = int(input())
+    age = (remainder_3 * 70 + remainder_5 * 21 + remainder_7 * 15) % 105
+    print(f"Your age is {age}; that's a good time to start programming!")
+    count()
 
-    rem3 = int(input())
-    rem5 = int(input())
-    rem7 = int(input())
-    age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
 
-    print("Your age is " + str(age) + "; that's a good time to start programming!")
-
-
-def count():
+def count():  # counts to number from the input
     print('Now I will prove to you that I can count to any number you want.')
-
     num = int(input())
     curr = 0
     while curr <= num:
         print(curr, '!')
         curr = curr + 1
+    test()
 
 
-def test():
+def test():  # prints a test to solve
     print("Let's test your programming knowledge.")
     print("""Why do we use methods?
         1. To repeat a statement multiple times.
@@ -44,16 +45,11 @@ def test():
             break
         else:
             print("Try again")
-    print('Completed, have a nice day!')
+    end()
 
 
-def end():
+def end():  # ends the program
     print('Congratulations, have a nice day!')
 
 
-greet('Aid', '2020')  # change it as you need
-remind_name()
-guess_age()
-count()
-test()
-end()
+greetings('Aid', '2020')
